@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
 import Rate from 'rsuite/Rate';
 import './cards.css'
-import courceImg1 from '../../../imgs/StudentCourse1.jpg'
-import courceImg2 from '../../../imgs/StudentCourse2.jpg'
-import courceImg3 from '../../../imgs/StudentCourse3.jpg'
-import { ThemeContext } from '../../../ThemeContext';
+import courceImg1 from '../../imgs/StudentCourse1.jpg'
+import courceImg2 from '../../imgs/StudentCourse2.jpg'
+import courceImg3 from '../../imgs/StudentCourse3.jpg'
+import { ThemeContext } from '../../ThemeContext';
 import { Link } from 'react-router-dom';
-import RatingStars from '../../RatingStars/RatingStars';
+import RatingStars from '../RatingStars/RatingStars';
 
 // Make the pagenationi
 

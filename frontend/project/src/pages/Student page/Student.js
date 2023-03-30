@@ -1,14 +1,7 @@
 import { Route, Routes, useNavigate } from "react-router-dom"
-import NavBar from "./NavBar"
-import SlideBar from "./SideBar"
-import './student.css'
-// import Teacher from "./Teachers"
 import { useEffect, useState } from "react"
 import { useContext } from "react"
-import { ThemeContext } from "../ThemeContext"
-
-
-
+import { ThemeContext } from "../../ThemeContext"
 // pages
 import Acadmic from "./Acadmic"
 import News from "./New"
@@ -17,23 +10,20 @@ import Chatstu from "./chatstu"
 import SettingsStu from "./settingsstu"
 import Cources from "./Cources"
 import Library from "./Library"
-import Header from "../Compoents/Header/Header"
-import MiniSideBar from "./MiniSideBar"
-import Barchart from "../Compoents/charts/BarChart.js"
+// Componets
+import Header from "../../Compoents/Header/Header"
+import MiniSideBar from "../../Compoents/SideBar/MiniSideBar"
+import NavBar from "../../Compoents/Navs/DashboardNav"
+import SlideBar from "../../Compoents/SideBar/SideBar"
+import './student.css'
 
 
-function StudentPage() {
+function Studentpage() {
+    const Theme = useContext(ThemeContext)
     let navigate = useNavigate()
     window.onload = function () {
         navigate('/stu')
     }
-
-
-
-
-
-    const Theme = useContext(ThemeContext)
-
     // get the Theme from the localStorge
     useEffect(()=>{
         if(localStorage.getItem("theme-color")){
@@ -45,15 +35,11 @@ function StudentPage() {
             <NavBar />
             <SlideBar />
             <MiniSideBar />
-            
-
             <div className="landing">
                 <div className="col pb-3 px-4">
                     <section>
                         <Header />
                     </section>
-
-                    {/* <h1>hwllo</h1> */}
                     <Routes>
                         <Route path="/" element={<Acadmic />}> </Route>
                         <Route path="/cources/*" element={<Cources />}> </Route>
@@ -68,22 +54,16 @@ function StudentPage() {
         </>
     )
 }
-export default StudentPage
+export default Studentpage
 
-//fix the localstorge of the Theme so the app works
 // fix table width
 // fix resposive 
 //fix circle width on responsive
 // border raduis of cards section
-    
-
 // give the col padding and remove all the componetes padding ... just add some margin between all sections
-// cources componet make more globale by taking more props
+// cources componet make it more globale by taking more props
 // make notification and all responsive 
 
 
-// fix cources
 
 
-
-// make router pages

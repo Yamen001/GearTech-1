@@ -1,8 +1,8 @@
 import './navbar.css'
-import imglogo from '../imgs/logo.png'
-import userimg from '../imgs/profilestu.jpg'
+import imglogo from '../../imgs/logo.png'
+import userimg from '../../imgs/profilestu.jpg'
 import { useContext } from "react"
-import { ThemeContext } from "../ThemeContext"
+import { ThemeContext } from "../../ThemeContext"
 
 
 function NavBar(){

@@ -14,7 +14,6 @@ function Home() {
     return (
         <>
         <HoemNav />
-
             <div>
                 <Routes>
                     <Route path="/" element={<Index />} />
@@ -25,9 +24,6 @@ function Home() {
                 </Routes>
             </div>
         <Footer />
-
-
-
         </>
     )
 }

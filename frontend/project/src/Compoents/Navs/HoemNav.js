@@ -4,7 +4,7 @@ import imglogo from '../../imgs/logo.png'
 
 function HoemNav() {
     return (
-        <nav class="navbar navbar-expand-lg position-fixed top-0 w-100">
+        <nav class="navbar navbarHome navbar-expand-lg position-fixed top-0 w-100">
             <div class="container">
                 <Link to="/" ><img src={imglogo} width='40' alt="img logo" /></Link>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

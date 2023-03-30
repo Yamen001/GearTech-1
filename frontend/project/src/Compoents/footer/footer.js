@@ -2,6 +2,7 @@ import React from 'react'
 import footerimg1 from '../../imgs/footer1.jpg'
 import footerimg2 from '../../imgs/footer2.jpg'
 import footerimg3 from '../../imgs/footer3.jpg'
+import './footer.css'
 function Footer() {
     return (
 

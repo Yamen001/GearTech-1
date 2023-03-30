@@ -1,16 +1,13 @@
 import { useEffect } from "react"
 import { useContext } from "react"
-import { ThemeContext } from "../ThemeContext"
-// Theme object
+import { ThemeContext } from "../../ThemeContext"
 
 
 
 
 function SettingsStu() {
     const ThemesObj = useContext(ThemeContext)
-    console.log(ThemesObj)
-
-
+    // console.log(ThemesObj)
 
     useEffect(() => {
         // make buttons BackgroundColors
@@ -23,7 +20,6 @@ function SettingsStu() {
         document.addEventListener("click", function (e) {
             if (e.target.classList.contains("theme-color")) {
                 changeThemeColor(Themecolors, e)
-
             }
         })
     }, [])
@@ -72,17 +68,6 @@ function SettingsStu() {
                         <span onClick={ThemeHandler} className="color theme-color" data-colornumber="2" data-color="green"></span>
                     </div>
                 </div>
-                {/* <div className="control">
-                    <h4 className="controtl-name">Background :</h4>
-                    <div className="colors d-flex gap-3">
-                        <span className="color background-color" data-color="#FADBD8"></span>
-                        <span className="color background-color" data-color="#E8DAEF"></span>
-                        <span className="color background-color" data-color="#A9CCE3"></span>
-                        <span className="color background-color" data-color="#A9DFBF"></span>
-                        <span className="color background-color" data-color="#F9E79F"></span>
-                        <span className="color background-color" data-color="#ABB2B9"></span>
-                    </div>
-                </div>         */}
             </div>
         </section>
     )

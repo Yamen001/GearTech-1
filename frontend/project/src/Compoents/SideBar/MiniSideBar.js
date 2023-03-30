@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './sidebar.css'
-import { ThemeContext } from '../ThemeContext'
+import { ThemeContext } from '../../ThemeContext'
 
 
 export default function MiniSideBar() {

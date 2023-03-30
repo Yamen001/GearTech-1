@@ -1,6 +1,6 @@
 import React from 'react'
 import './cards.css'
-import { ThemeContext } from '../../../ThemeContext'
+import { ThemeContext } from '../../ThemeContext'
 import { useContext } from 'react'
 
 

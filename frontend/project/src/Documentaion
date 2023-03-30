@@ -1,25 +1,12 @@
 Compoents 
 global: Header , NavBar , SideBar
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 notes...
-
 if i want to provide an context api .... i should provide it ...to App.js not any smaller componets 
+you can not use style attribute on componets
+
+to read a local json file ....put the file inside the public folder 
+then do the fetching
 
 
-you can use style attribute on componets
+if the erroe was SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON ....
+then the respone of the fetching is html or XML file XXXX

@@ -1,7 +1,5 @@
 .SideBar-Students {
     padding: 85px 0 70px 10px;
-    /* height: 100%; */
-    /* background-color: #865da7; */
     width: 230px;
 }
 
@@ -27,14 +25,13 @@
 
 .SideBar-Students ul li {
     margin: 10px 0;
-    /* background-color: red; */
     padding: 15px;
     border-radius: 16px 0 0 10px;
     transition: .2s ease;
     position: relative;
 }
 
-.SideBar-Students ul li .topPiece {
+/* .SideBar-Students ul li .topPiece {
     opacity: 0;
     width: 20px;
     height: 16px;
@@ -84,7 +81,7 @@
     transition: .2s ease;
     pointer-events: none;
     z-index: 111;
-}
+} */
 
 .SideBar-Students ul li a {
     color: white;
@@ -105,17 +102,13 @@
 .Miniside-bar ul li .bi {
     /* fill:white; */
 }
-
 .SideBar-Students ul li.active .bi {
     /* fill: purple; */
 }
-
 .SideBar-Students ul li.active .topPiece,
 .SideBar-Students ul li.active .bottomPiece {
     opacity: 1;
-
 }
-
 .SideBar-Students ul li.active a {
     color: #865da7;
 }
@@ -123,6 +116,7 @@
 
 
 .Miniside-bar {
+    z-index: 22;
     width: 200px;
     height: 100%;
     position: fixed;
