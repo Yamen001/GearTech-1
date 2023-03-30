@@ -66,7 +66,7 @@ main .container {
 }
 
 .cources .cource-card {
-    height: 160px;
+    height: 140px;
     max-width: 160px;
     width: 100%;
 }
@@ -74,8 +74,8 @@ main .container {
 .cources img {
     /* background-color: red; */
     width: 65px;
-    height: 65px;
-    margin-bottom: 20px;
+    height: 60px;
+    margin-bottom: 26px;
 }
 
 

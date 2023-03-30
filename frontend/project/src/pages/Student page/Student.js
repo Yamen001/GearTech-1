@@ -1,4 +1,4 @@
-import { Route, Routes, useNavigate } from "react-router-dom"
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { useContext } from "react"
 import { ThemeContext } from "../../ThemeContext"
@@ -16,6 +16,7 @@ import MiniSideBar from "../../Compoents/SideBar/MiniSideBar"
 import NavBar from "../../Compoents/Navs/DashboardNav"
 import SlideBar from "../../Compoents/SideBar/SideBar"
 import './student.css'
+import { AnimatePresence } from "framer-motion"
 
 
 function Studentpage() {
@@ -25,11 +26,12 @@ function Studentpage() {
         navigate('/stu')
     }
     // get the Theme from the localStorge
-    useEffect(()=>{
-        if(localStorage.getItem("theme-color")){
+    useEffect(() => {
+        if (localStorage.getItem("theme-color")) {
             Theme.toggleTheme(JSON.parse(localStorage.getItem("theme-color")))
         }
-    },[])
+    }, [])
+    const location = useLocation()
     return (
         <>
             <NavBar />
@@ -40,15 +42,17 @@ function Studentpage() {
                     <section>
                         <Header />
                     </section>
-                    <Routes>
-                        <Route path="/" element={<Acadmic />}> </Route>
-                        <Route path="/cources/*" element={<Cources />}> </Route>
-                        <Route path="/news" element={<News />}> </Route>
-                        <Route path="/news" element={<Library />}> </Route>
-                        <Route path="/chat" element={<Chatstu />} />
-                        <Route path="/profile" element={<Porfilestu />} />
-                        <Route path="/settings" element={<SettingsStu  />} />
-                    </Routes>
+                    <AnimatePresence mode="wait">
+                        <Routes key={location.pathname} location={location}>
+                            <Route path="/" element={<Acadmic />}> </Route>
+                            <Route path="/cources/*" element={<Cources />}> </Route>
+                            <Route path="/news" element={<News />}> </Route>
+                            <Route path="/news" element={<Library />}> </Route>
+                            <Route path="/chat" element={<Chatstu />} />
+                            <Route path="/profile" element={<Porfilestu />} />
+                            <Route path="/settings" element={<SettingsStu />} />
+                        </Routes>
+                    </AnimatePresence>
                 </div>
             </div>
         </>

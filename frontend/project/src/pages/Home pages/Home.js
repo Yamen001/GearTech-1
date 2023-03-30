@@ -5,15 +5,16 @@ import Contact from "./Contact"
 import Index from "./Index"
 import './home.css'
 import Courses from "./Courses"
-import HoemNav from "../../Compoents/Navs/HoemNav"
+import HomeNav from "../../Compoents/Navs/HomeNav"
 import Footer from "../../Compoents/footer/footer"
+import Animatepages from "../../AnimatepagesHome"
 
 
 
 function Home() {
     return (
         <>
-        <HoemNav />
+            <HomeNav />
             <div>
                 <Routes>
                     <Route path="/" element={<Index />} />
@@ -23,8 +24,9 @@ function Home() {
                     <Route path='/contact' element={<Contact />} />
                 </Routes>
             </div>
-        <Footer />
+            <Footer />
         </>
+
     )
 }
 export default Home

@@ -1,6 +1,4 @@
 import React from 'react'
-import NavBar from './NavBar'
-import SlideBar from './SideBar'
 import { Routes, Route } from 'react-router-dom'
 import Activites from './Activites'
 import AllUsers from './AllUsers'
@@ -9,10 +7,12 @@ import News from './News'
 import Transport from './Transport'
 import Library from './Library'
 import Classes from './Classes'
-import MiniSideBar from '../Student Components/MiniSideBar'
-import Header from '../Compoents/Header/Header'
 import { useNavigate } from 'react-router-dom'
 
+import Header from '../../Compoents/Header/Header'
+import MiniSideBar from '../../Compoents/SideBar/MiniSideBarAdmain'
+import NavBar from '../../Compoents/Navs/DashboardNav'
+import SlideBar from '../../Compoents/SideBar/SideBarAdmain'
 
 
 export default function Admain() {

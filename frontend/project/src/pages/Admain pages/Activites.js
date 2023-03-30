@@ -1,14 +1,12 @@
 import React from 'react'
-import ProgressCircle from 'rsuite/esm/Progress/ProgressCircle'
-import Linechart from '../Compoents/charts/lineChart'
-import './admain.css'
-import '../Compoents/charts/CircleProgress.css'
-import CircleProgress from '../Compoents/charts/CircleProgress'
-import Barchart from '../Compoents/charts/BarChart'
-import AdmainBarChart from '../Compoents/charts/AdmainBarChart'
-import WebTrafficChart from '../Compoents/charts/WebTraffic'
-import AdmainSocialMedia from '../Compoents/global Componets/Cards/AdmainSocialMedia'
-import Piechart from '../Compoents/charts/PIeChart'
+import Linechart from '../../Compoents/charts/lineChart'
+import '../../pages/Admain pages/admain.css'
+import '../../Compoents/charts/CircleProgress.css'
+import CircleProgress from '../../Compoents/charts/CircleProgress'
+import AdmainBarChart from '../../Compoents/charts/AdmainBarChart'
+import WebTrafficChart from '../../Compoents/charts/WebTraffic'
+import AdmainSocialMedia from '../../Compoents/Cards/AdmainSocialMedia'
+import Piechart from '../../Compoents/charts/PIeChart'
 
 export default function Activites() {
     return (

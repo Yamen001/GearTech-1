@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import AddUserForm from '../Compoents/forms/AddUserForm'
+import AddUserForm from '../../Compoents/forms/AddUserForm'
 
 export default function Adduser() {
 

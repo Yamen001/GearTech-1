@@ -1,7 +1,7 @@
 import React from 'react'
-import Select from '../Compoents/forms/select'
-import StudentTable from '../Compoents/Tables/StudentTable'
-import StuMarks from '../Compoents/Tables/StuMarks'
+import Select from '../../Compoents/forms/select'
+import StudentTable from '../../Compoents/Tables/StudentTable'
+import StuMarks from '../../Compoents/Tables/StuMarks'
 
 export default function AllUsers() {
     return (

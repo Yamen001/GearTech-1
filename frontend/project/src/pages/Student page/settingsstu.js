@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 import { useContext } from "react"
+import AnimatepagesDashboards from "../../AnimatepagesDashboards"
 import { ThemeContext } from "../../ThemeContext"
 
 
@@ -57,19 +58,21 @@ function SettingsStu() {
 
 
     return (
-        <section className="SettingsStu">
-            <h2 className="mb-3">Settigns</h2>
-            <div className="Settings-container d-flex flex-column gap-4">
-                <div className="control">
-                    <h4 className="controtl-name">Theme :</h4>
-                    <div className="colors d-flex gap-3">
-                        <span onClick={ThemeHandler} className="color theme-color" data-colornumber="0" data-color="purple"></span>
-                        <span onClick={ThemeHandler} className="color theme-color" data-colornumber="1" data-color="blue"></span>
-                        <span onClick={ThemeHandler} className="color theme-color" data-colornumber="2" data-color="green"></span>
+        <AnimatepagesDashboards>
+            <section className="SettingsStu bg-white p-3">
+                <h2 className="mb-3">Settigns</h2>
+                <div className="Settings-container d-flex flex-column gap-4">
+                    <div className="control">
+                        <h4 className="controtl-name">Theme :</h4>
+                        <div className="colors d-flex gap-3">
+                            <span onClick={ThemeHandler} className="color theme-color" data-colornumber="0" data-color="purple"></span>
+                            <span onClick={ThemeHandler} className="color theme-color" data-colornumber="1" data-color="blue"></span>
+                            <span onClick={ThemeHandler} className="color theme-color" data-colornumber="2" data-color="green"></span>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </AnimatepagesDashboards>
     )
 }
 export default SettingsStu

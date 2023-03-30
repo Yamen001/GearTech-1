@@ -5,7 +5,7 @@ import Login from './pages/Login page/LogIn';
 import Studentpage from'./pages/Student page/Student.js'
 
 
-// import Admain from './Admin Componets/Admain';
+import Admain from './pages/Admain pages/Admain';
 import ThemeProvider from './ThemeContext';
 // import { ThemeUpdateContext } from './ThemeContext';
 
@@ -20,7 +20,7 @@ function App() {
           <Route path='/*' element={<Home />} />
           <Route path='/login' element={<Login />} />
           <Route path='/stu/*' element={<Studentpage />} />
-          {/* <Route path='/admain/*' element={<Admain />} /> */}
+          <Route path='/admain/*' element={<Admain />} />
           {/* <Route path='/teacher/*' element={<Teacher />} /> */}
           {/* <Route path='' */}
         </Routes>

@@ -16,7 +16,7 @@ function StudentCources() {
     console.log(Theme)
     let cources = [courceImg1, courceImg2, courceImg3]
     return (
-        <div className=' p-4'>
+        <div>
             <h4>My Courses</h4>
             <div className='student-coursesCards d-flex flex-column gap-4'>
                 {[1, 2, 3].map((index) => (
