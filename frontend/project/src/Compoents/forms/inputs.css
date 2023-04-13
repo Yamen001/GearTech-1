@@ -7,7 +7,7 @@
 .Adduser input , .Adduser textarea{
     padding: 4px ;
     outline: none ;
-    border: 1px solid #00000084;
+    border: 1px solid #aaaaaa84;
 }
 label{
     color: purple;

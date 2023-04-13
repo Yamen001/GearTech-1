@@ -2,20 +2,6 @@ import React, { useEffect, useState } from 'react'
 import Select from './select'
 import './inputs.css'
 
-// const JsonObject = {
-//     firstname: "yamen",
-//     lastname: "nasri",
-//     emali: "Yamen.nasdr@ggg.",
-//     password: "12345",
-//     address: "syria damascurs",
-//     phone: "099333",
-//     shortbio: "hello world how are you today",
-//     gender: "male",
-//     blood: "A+",
-//     status: "Teacher",
-//     religon: "Muslim"
-// }
-// Make a form one to get data (user) to edit it..... and the other to make a data (user)
 
 
 function AddUserForm() {
@@ -25,15 +11,16 @@ function AddUserForm() {
     //     var image = document.getElementById('output');
     //     image.src = URL.createObjectURL(event.target.files[0]);
     // }
-    //! api/register
-
 
     function RsetInputs(e) {
-        console.log(FormData)
         e.preventDefault()
+        
+        //~ check if user writes any data
         if(Object.keys(FormData).length > 4){
             const confimationn = window.confirm("are you sure?")
             if (confimationn) {
+
+                // ~ Delete the data from the Form
                 let inputs = document.querySelectorAll("input")
                 let selects = document.querySelectorAll("select")
                 inputs.forEach(input => {
@@ -43,24 +30,21 @@ function AddUserForm() {
                     select.value = select.options[0].value
                 })
                 document.querySelector("textarea").value = ''
+                //~ reset The FormData
+                setForm({gender:'male' , blood:'+A' , status:'teacher' , relgion:'muslim'})
             }
         }
     }
 
 
-
-
-
-
-
-
     // not showing the joined month and .....
     function formSubmit(e) {
         e.preventDefault()
+        //~ add joining date of the user
         setForm({...FormData , "joined year" : new Date().getFullYear(), "joined month" : new Date().getMonth()+1 , "joined day" : new Date().getDay() })
-        console.log(Object.keys(FormData).length)
-        if(Object.keys(FormData).length === 14){
-            console.log("success")
+        if(Object.keys(FormData).length === 13){
+
+            //~ send the data
             fetch(`http://127.0.0.1:8000/api/register`,{
                 method:"POST",
                 headers:{'Accept': 'application/json','Content-Type': 'application/json'},
@@ -156,7 +140,3 @@ function AddUserForm() {
     )
 }
 export default AddUserForm
-
-
-
-// notes: you can use the state deep to many childes compesonts ...but not in deep ... this process called drilling ...not a good way
