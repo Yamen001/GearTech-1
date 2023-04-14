@@ -14,13 +14,10 @@ import popularcource3 from '../../imgs/popularcource3.jpg'
 import popularcource4 from '../../imgs/popularcource4.jpg'
 import SwiperTeacher from './SwiperTeacher'
 import SwiperComments from './SwiperComments'
-import CourcesCards from '../../Compoents/Cards/CourcesCards'
 
 import { useEffect } from 'react'
-import jsonfile from "../../Compoents/Cards/data.json"
 import AnimatepagesHome from '../../AnimatepagesHome'
 function Index() {
-    console.log(jsonfile)
     let started = false
     useEffect(() => {
 
@@ -278,8 +275,6 @@ function Index() {
                                 </div>
                             </div>
                         </div>
-                        <CourcesCards CardsNumber="5" Section="Courses" />
-
                     </div>
                 </section>
 
