@@ -7,7 +7,6 @@ import './home.css'
 import Courses from "./Courses"
 import HomeNav from "../../Compoents/Navs/HomeNav"
 import Footer from "../../Compoents/footer/footer"
-import Animatepages from "../../AnimatepagesHome"
 import Page404 from "../Notfound page/Page404"
 import { useState } from "react"
 

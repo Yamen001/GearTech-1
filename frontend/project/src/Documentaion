@@ -17,3 +17,5 @@ we give our parent route a unique key using the locationpathname from my current
 when evey my key changes our route become a new compoent ...so AnimatePresence makes react wait for all the animations are done .. then the component unmounts
 
 
+
+note ... never put a stracture of the pages withthe routes.... only put the routes and maybe nav and footer ... nothing eles

@@ -17,6 +17,8 @@ import SwiperComments from './SwiperComments'
 
 import { useEffect } from 'react'
 import AnimatepagesHome from '../../AnimatepagesHome'
+import Button1 from '../../buttons/button1'
+import Button2 from '../../buttons/button2'
 function Index() {
     let started = false
     useEffect(() => {
@@ -72,10 +74,10 @@ function Index() {
                         <div className="row justify-content-center gap-md-0 gap-2 ">
                             <div className="col-md-6  d-flex flex-column text-white  justify-content-center">
                                 <h1 className='display-3 fw-bold'>Best Education for Sawa School</h1>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.</p>
+                                <p className='my-3'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.</p>
                                 <div>
-                                    <button className="px-3 py-1">Read More</button>
-                                    <button className="px-3 py-1">About Us</button>
+                                    <Button2 text="Read More" />
+                                    <Button2 text="About Us" />
                                 </div>
                             </div>
                             <div className="col-md-6 col-10 text-center">
@@ -122,7 +124,7 @@ function Index() {
                                 <h3 className='fs-5 fw-normal text-white mt-2 text-capitalize '>html & css</h3>
                             </div>
                         </div>
-                        <button>All cources</button>
+                        <Button1 text="All Courses" />
                     </div>
                 </section>
 
