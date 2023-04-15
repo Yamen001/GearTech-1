@@ -36,6 +36,7 @@ function Studentpage() {
     const location = useLocation()
     return (
         <>
+        {/* <Loadingscreen /> */}
             <NavBar />
             <SlideBar />
             <MiniSideBar />

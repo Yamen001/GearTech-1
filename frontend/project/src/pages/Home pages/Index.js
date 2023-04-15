@@ -17,8 +17,8 @@ import SwiperComments from './SwiperComments'
 
 import { useEffect } from 'react'
 import AnimatepagesHome from '../../AnimatepagesHome'
-import Button1 from '../../buttons/button1'
-import Button2 from '../../buttons/button2'
+import Button2 from '../../Compoents/buttons/button2'
+import Button1 from '../../Compoents/buttons/button1'
 function Index() {
     let started = false
     useEffect(() => {
