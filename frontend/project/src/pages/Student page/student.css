@@ -1,7 +1,8 @@
 .landing {
     min-height: 100vh;
-    padding: 100px 60px 10px 280px;
+    padding: 100px 60px 10px 60px;
     background-color: #ececec;
+    width: 100%;
 }
 
 @media (max-width:1000px) {

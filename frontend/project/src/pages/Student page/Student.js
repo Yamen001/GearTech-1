@@ -27,19 +27,22 @@ function Studentpage() {
     window.onload = function () {
         navigate('/stu')
     }
-    //~ get the Theme from the localStorge
+    const location = useLocation()
+
     useEffect(() => {
+        //~ get the Theme from the localStorge
         if (localStorage.getItem("theme-color")) {
             Theme.toggleTheme(JSON.parse(localStorage.getItem("theme-color")))
         }
     }, [])
-    const location = useLocation()
     return (
-        <>
+        <div className="d-flex">
         {/* <Loadingscreen /> */}
             <NavBar />
             <SlideBar />
             <MiniSideBar />
+
+            
             <div className="landing">
                 <div className="col pb-3 px-4">
                     <section>
@@ -58,7 +61,7 @@ function Studentpage() {
                     </AnimatePresence>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 export default Studentpage
