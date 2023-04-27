@@ -37,21 +37,19 @@ function Studentpage() {
     }, [])
     return (
         <div className="d-flex">
-        {/* <Loadingscreen /> */}
-            <NavBar />
+            {/* <Loadingscreen /> */}
             <SlideBar />
             <MiniSideBar />
 
-            
+
             <div className="landing">
+                <NavBar />
                 <div className="col pb-3 px-4">
-                    <section>
-                        <Header />
-                    </section>
+                    <Header />
                     <AnimatePresence mode="wait">
                         <Routes key={location.pathname} location={location}>
                             <Route path="/" element={<Acadmic />}> </Route>
-                            <Route path="/allcourses/*" element={<AllCourses/>}> </Route>
+                            <Route path="/allcourses/*" element={<AllCourses />}> </Route>
                             <Route path="/news" element={<News />}> </Route>
                             <Route path="/news" element={<Library />}> </Route>
                             <Route path="/chat" element={<Chatstu />} />

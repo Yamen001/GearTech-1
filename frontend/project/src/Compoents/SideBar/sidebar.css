@@ -1,8 +1,8 @@
 .SideBar-Students {
     width: 220px;
-    padding-left: 10px;
-    /* width: 50px; */
-
+    padding:0 10px;
+    transition: .4s ease;
+    position: relative;
 }
 
 @media (max-width:1000px) {
@@ -26,78 +26,32 @@
 }
 
 .SideBar-Students ul{
-    position: sticky;
     top: 75px;
     right: 0;
 }
 .SideBar-Students ul li {
     margin: 10px 0;
-    padding: 15px;
-    border-radius: 16px 0 0 10px;
+    border-radius: 16px 10px;
     transition: .2s ease;
     position: relative;
+    cursor: pointer;
+    transition: .3s ease;
 }
-
-/* .SideBar-Students ul li .topPiece {
-    opacity: 0;
-    width: 20px;
-    height: 16px;
-    position: absolute;
-    right: 0px;
-    top: -16px;
-    transition: .2s ease;
-    z-index: 111;
-    pointer-events: none;
-
-}
-
-.SideBar-Students ul li .topPiece::before {
-    content: '';
-    width: 20px;
-    height: 16px;
-    top: 0px;
-    position: absolute;
-    right: 0px;
-    border-radius: 100% 0% 100% 0% / 0% 0% 100% 100%;
-    transition: .2s ease;
-    z-index: 111;
-    pointer-events: none;
-}
-
-.SideBar-Students ul li .bottomPiece {
-    opacity: 0;
-    width: 20px;
-    height: 16px;
-    position: absolute;
-    background-color: #691818;
-    right: 0;
-    bottom: -16px;
-    transition: .2s ease;
-    pointer-events: none;
-}
-
-.SideBar-Students ul li .bottomPiece::before {
-    content: '';
-    opacity: 1;
-    width: 20px;
-    height: 16px;
-    position: absolute;
-    right: 0;
-    border-radius: 0% 100% 100% 0% / 0% 100% 0% 100%;
-    bottom: 0px;
-    transition: .2s ease;
-    pointer-events: none;
-    z-index: 111;
-} */
 
 .SideBar-Students ul li a {
+    display: block;
+    padding: 10px 15px 10px 10px;
     color: white;
     text-decoration: none;
     transition: .5s ease;
+    user-select: none;
+}
+.SideBar-Students ul li a *{
+    pointer-events: none;
 }
 
-.SideBar-Students ul li a:hover {
-    padding-left: 5px;
+.SideBar-Students ul li:not(.active) a:hover {
+    padding-left: 15px;
 }
 
 .SideBar-Students ul li.active {
@@ -109,15 +63,12 @@
 .Miniside-bar ul li .bi {
     /* fill:white; */
 }
-.SideBar-Students ul li.active .bi {
-    /* fill: purple; */
+.SideBar-Students ul li:not(.active) .bi {
+    fill: white;
 }
 .SideBar-Students ul li.active .topPiece,
 .SideBar-Students ul li.active .bottomPiece {
     opacity: 1;
-}
-.SideBar-Students ul li.active a {
-    color: #865da7;
 }
 
 
@@ -140,6 +91,7 @@
     text-decoration: none;
     transition: .5s ease;
     font-size: 18px;
+    fill: white;
 }
 
 .Miniside-bar ul li {

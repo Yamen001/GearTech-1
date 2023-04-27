@@ -16,10 +16,10 @@ function App() {
     <ThemeProvider>
       <div className="App">
         <Routes>
-            <Route path='/*' element={<Home />} />
-            <Route path='/login' element={<Login />} />
+            {/* <Route path='/*' element={<Home />} /> */}
+            {/* <Route path='/login' element={<Login />} /> */}
             <Route path='/stu/*' element={<Studentpage />} />
-            <Route path='/admain/*' element={<Admain />} />
+            {/* <Route path='/admain/*' element={<Admain />} /> */}
         </Routes>
       </div>
     </ThemeProvider>
