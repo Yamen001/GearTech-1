@@ -1,7 +1,6 @@
 .SideBar-Students {
     width: 220px;
-    padding:0 10px;
-    transition: .4s ease;
+    transition: .3s ease;
     position: relative;
 }
 
@@ -24,18 +23,28 @@
         display: none;
     }
 }
-
+.SideBar-Students .sidebar-arrow{
+    transition: .3s ease;
+    transform: rotateY(0deg);
+}
+.SideBar-Students .sidebar-arrow.active{
+    transform: rotateY(180deg);
+}
 .SideBar-Students ul{
-    top: 75px;
+    padding:0 20px;
+    top: 0px;
+    /* position: ; */
     right: 0;
 }
 .SideBar-Students ul li {
     margin: 10px 0;
     border-radius: 16px 10px;
-    transition: .2s ease;
     position: relative;
     cursor: pointer;
     transition: .3s ease;
+}
+.SideBar-Students .sidebar-logo p {
+    transition: .5s ease;
 }
 
 .SideBar-Students ul li a {
