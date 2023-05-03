@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router-dom'
 import Header from '../../Compoents/Header/Header'
 import MiniSideBar from '../../Compoents/SideBar/MiniSideBarAdmain'
 import NavBar from '../../Compoents/Navs/DashboardNav'
-import SlideBar from '../../Compoents/SideBar/SideBarAdmain'
+import SideBarAdmin from '../../Compoents/SideBar/SideBarAdmin'
 
 
 export default function Admain() {
@@ -22,15 +22,13 @@ export default function Admain() {
     }
 
     return (
-        <>
-            <NavBar />
-            <SlideBar />
+        <div className='d-flex' style={{overflow:"hidden"}}>
+            <SideBarAdmin />
             <MiniSideBar />
             <div className="landing">
+                <NavBar />
                 <div className="col pb-3 px-4">
-                    <section>
-                        <Header />
-                    </section>
+                    <Header />
                     <Routes>
                         <Route path="/" element={<Activites />}> </Route>
                         <Route path="/allusers" element={<AllUsers />}> </Route>
@@ -42,6 +40,6 @@ export default function Admain() {
                     </Routes>
                 </div>
             </div>
-        </>
+        </div>
     )
 }

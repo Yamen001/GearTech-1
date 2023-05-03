@@ -19,7 +19,7 @@ function App() {
             {/* <Route path='/*' element={<Home />} /> */}
             {/* <Route path='/login' element={<Login />} /> */}
             <Route path='/stu/*' element={<Studentpage />} />
-            {/* <Route path='/admain/*' element={<Admain />} /> */}
+            <Route path='/admin/*' element={<Admain />} />
         </Routes>
       </div>
     </ThemeProvider>

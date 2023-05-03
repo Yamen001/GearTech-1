@@ -1,7 +1,9 @@
 .SideBar-Students {
-    width: 220px;
+    width: 240px;
     transition: .3s ease;
     position: relative;
+    display: flex;
+
 }
 
 @media (max-width:1000px) {
@@ -33,52 +35,48 @@
 .SideBar-Students ul{
     padding:0 20px;
     top: 0px;
-    /* position: ; */
     right: 0;
 }
 .SideBar-Students ul li {
-    margin: 10px 0;
+    margin: 5px 0 0;
     border-radius: 16px 10px;
     position: relative;
     cursor: pointer;
     transition: .3s ease;
 }
-.SideBar-Students .sidebar-logo p {
-    transition: .5s ease;
-}
 
-.SideBar-Students ul li a {
+/* when last div outside the ul .... or it will be SideBar-Students ul li a */
+.SideBar-Students  a {
     display: block;
-    padding: 10px 15px 10px 10px;
+    padding: 10px;
     color: white;
     text-decoration: none;
     transition: .5s ease;
     user-select: none;
 }
-.SideBar-Students ul li a *{
+.SideBar-Students a *{
     pointer-events: none;
 }
 
 .SideBar-Students ul li:not(.active) a:hover {
     padding-left: 15px;
 }
-
 .SideBar-Students ul li.active {
     background-color: #ececec;
 
 }
-
-.SideBar-Students ul li .bi,
-.Miniside-bar ul li .bi {
-    /* fill:white; */
-}
 .SideBar-Students ul li:not(.active) .bi {
     fill: white;
 }
-.SideBar-Students ul li.active .topPiece,
-.SideBar-Students ul li.active .bottomPiece {
-    opacity: 1;
+.sidebar-logout-section div{
+    display: flex;
+    transition: .3s 2s ease;
+    transition-delay: 2s;
 }
+
+
+
+
 
 
 

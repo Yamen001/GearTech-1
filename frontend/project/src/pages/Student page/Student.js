@@ -13,7 +13,7 @@ import Library from "./Library"
 import Header from "../../Compoents/Header/Header"
 import MiniSideBar from "../../Compoents/SideBar/MiniSideBar"
 import NavBar from "../../Compoents/Navs/DashboardNav"
-import SlideBar from "../../Compoents/SideBar/SideBar"
+import SlideBar from "../../Compoents/SideBar/SideBarStudent"
 import './student.css'
 import { AnimatePresence } from "framer-motion"
 import AllCourses from "./AllCourses"
