@@ -2,8 +2,14 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { DataGrid } from '@mui/x-data-grid'
 import { Link } from "react-router-dom"
+import EditUserForm from '../forms/EditUserForm'
 
 function StudentTable() {
+    function OpenEditPoPUpWidnow(){
+        let EditWindow = document.querySelector(".EditUserForm")
+        console.log(EditWindow)
+
+    }
     const [data, setData] = useState([])
 
     const GetUseres = async () => {
@@ -48,7 +54,7 @@ function StudentTable() {
 
                 return (
                     <>
-                        <Link to={`/admain/add`} variant="outlined" style={{ backgroundColor: "purple", color: 'white', marginRight: 10, border: "none", padding: 5, textAlign: "center", width: 50 }} size="small" >Edit</Link>
+                        <button onClick={OpenEditPoPUpWidnow}  variant="outlined" style={{ backgroundColor: "purple", color: 'white', marginRight: 10, border: "none", padding: 5, textAlign: "center", width: 50 }} size="small" >Edit</button>
                         <button variant="outlined" style={{ backgroundColor: "red", color: 'white', border: "none", padding: 5, width: 50 }} size="small" onClick={onClick}>Delete</button>
                     </>
                 );
@@ -69,6 +75,7 @@ function StudentTable() {
                 checkboxSelection
                 disableRowSelectionOnClick
             />
+        {/* <EditUserForm /> */}
         </div>
     )
 }
