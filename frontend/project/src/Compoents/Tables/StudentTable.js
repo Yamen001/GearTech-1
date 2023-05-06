@@ -4,24 +4,27 @@ import { DataGrid } from '@mui/x-data-grid'
 import { Link } from "react-router-dom"
 import EditUserForm from '../forms/EditUserForm'
 
-function StudentTable() {
-    function OpenEditPoPUpWidnow(){
-        let EditWindow = document.querySelector(".EditUserForm")
-        console.log(EditWindow)
+function StudentTable({ url, setEditUserUrl }) {
 
-    }
-    const [data, setData] = useState([])
+
+    let  [users, setUsers] = useState([])
+
+
+
+
 
     const GetUseres = async () => {
         await axios.get("https://randomuser.me/api/?results=20")
-            .then(res => setData(res.data.results))
+        // await axios.get(url)
+            .then(res => setUsers(res.data.results))
+            .then(()=> console.log(users))
     }
     useEffect(() => {
         GetUseres()
     }, [])
 
-    if (data) {
-        var rows = data.map((data, index) => ({
+    if (users) {
+        var rows = users.map((data, index) => ({
             id: index + 1,
             name: data.name.first,
             gender: data.gender,
@@ -41,6 +44,7 @@ function StudentTable() {
         { field: "email", headerName: "Email", },
         {
             field: "control",
+            // ^ params are the data of the row
             renderCell: (params) => {
                 const onClick = (e) => {
                     let confirms = window.confirm("are you sure to Delete")
@@ -51,10 +55,14 @@ function StudentTable() {
                     // const currentRow = params.row;
                     // return alert(JSON.stringify(currentRow, null, 4));
                 };
+                function EidtUserUrl() {
+                    setEditUserUrl(`https://randomuser.me/api/?results=20/${params.id}`)
+                    console.log(`"https://randomuser.me/api/?results=20/${params.id}"`)
+                }
 
                 return (
                     <>
-                        <button onClick={OpenEditPoPUpWidnow}  variant="outlined" style={{ backgroundColor: "purple", color: 'white', marginRight: 10, border: "none", padding: 5, textAlign: "center", width: 50 }} size="small" >Edit</button>
+                        <button onClick={EidtUserUrl} variant="outlined" style={{ backgroundColor: "purple", color: 'white', marginRight: 10, border: "none", padding: 5, textAlign: "center", width: 50 }} size="small" >Edit</button>
                         <button variant="outlined" style={{ backgroundColor: "red", color: 'white', border: "none", padding: 5, width: 50 }} size="small" onClick={onClick}>Delete</button>
                     </>
                 );
@@ -62,6 +70,18 @@ function StudentTable() {
             disableClickEventBubbling: true,
             width: 150,
         },
+        {
+            field:"Profile",
+            renderCell:()=>{
+
+                return(
+                    <>
+                        <h4>user img</h4>
+                    </>
+                )
+            },
+            width:100 ,
+        }
         // { field: "control", headerName: "Control", },
         // { field: "picture", headerName: "Profile", width:200 , height:100 },
     ]
@@ -75,7 +95,7 @@ function StudentTable() {
                 checkboxSelection
                 disableRowSelectionOnClick
             />
-        {/* <EditUserForm /> */}
+            {/* <EditUserForm /> */}
         </div>
     )
 }

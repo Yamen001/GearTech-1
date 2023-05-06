@@ -19,6 +19,11 @@ export default function AllUsers() {
     //^ data to api to GET good table
     let [data, setData] = useState({ type: "students", filed: "webdev", level: "level1", class: 'class1' })
 
+    //^ dynamic url prepare
+    let [url , setUrl] = useState("")
+
+    //^ dynamic url with specific user
+    let [editUserUrl , setEditUserUrl] = useState("")
 
 
     //^ set defualt values when toggles the UI selects
@@ -93,6 +98,8 @@ export default function AllUsers() {
     function getTableData(){
         let url = `allusers/api/${data.type}/${data?.filed || ''}/${data.level || ''}/${data.class ||''}`
         console.log(url)
+        setUrl("")
+        setUrl(url)
         // if(url.endsWith('/')){
         // console.log(url)      
         // console.log(url[url.length-1] , url[url.length-2])
@@ -119,8 +126,8 @@ export default function AllUsers() {
                         <button onClick={getTableData}>show</button>
                     </div>
                 </div>
-                <StudentTable />
-                <EditUserForm />s
+                {url && <StudentTable url={url} setEditUserUrl={setEditUserUrl} />}
+                {editUserUrl &&<EditUserForm editUserUrl={editUserUrl} setEditUserUrl={setEditUserUrl}  />}
             </section >
         </div >
     )
