@@ -18,8 +18,8 @@ function SideBarAdmin() {
     function togglesidebar() {
 
         settogglesidebar(prevvalue => !prevvalue)
-        let sidebaritemtext = document.querySelectorAll(".SideBar-Students .sidebar-itme-text")
-        let arrow = document.querySelector(".SideBar-Students .sidebar-arrow")
+        let sidebaritemtext = document.querySelectorAll(".SideBar .sidebar-itme-text")
+        let arrow = document.querySelector(".SideBar .sidebar-arrow")
         let sidebarLogoutSectionImg = document.querySelector(".sidebar-logout-section div")
 
         if (sidebarstate) {
@@ -44,7 +44,7 @@ function SideBarAdmin() {
     }
 
     function sideBarliToggle(e) {
-        let links = document.querySelectorAll(".SideBar-Students ul li")
+        let links = document.querySelectorAll(".SideBar ul li")
         if (e.target.tagName === "A") {
             links.forEach(link => {
                 link.classList.remove("active")
@@ -59,7 +59,7 @@ function SideBarAdmin() {
         }
     }
     return (
-        <div className="SideBar-Students flex-column justify-content-between" ref={sidebar} style={{ backgroundColor: Theme.sideBar }}>
+        <div className="SideBar flex-column justify-content-between" ref={sidebar} style={{ backgroundColor: Theme.sideBar }}>
             <ul className="Links px-2 list-unstyled position-sticky">
                 <div className="sidebar-logo text-center pt-2">
                     <img src={logo} alt="logoimg" width={43} />
@@ -67,7 +67,7 @@ function SideBarAdmin() {
                 <div className=" d-flex justify-content-end mt-2">
                     <button onClick={togglesidebar} className="sidebar-arrow px-2 position-sticky border-0  bg-transparent text-center text-white">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"  className="bi bi-arrow-left fw-bold" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+                            <path fillRule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
                         </svg>
                     </button>
                 </div>
@@ -76,11 +76,11 @@ function SideBarAdmin() {
                 <li className="active">
                     <Link onClick={sideBarliToggle} className="link d-flex" to={'/admin/'}>
                         <span className="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fillRule={Theme.sideBar} className="bi bi-book" viewBox="0 0 16 16">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill={Theme.sideBar} className="bi bi-book" viewBox="0 0 16 16">
                                 <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z" />
                             </svg>
                         </span>
-                        <span className="sidebar-itme-text ms-2">Acadmic</span>
+                        <span className="sidebar-itme-text ms-2" style={{ color: Theme.sideBar }}>Acadmic</span>
                     </Link>
                 </li>
 

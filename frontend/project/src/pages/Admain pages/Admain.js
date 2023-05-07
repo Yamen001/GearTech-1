@@ -18,16 +18,18 @@ import SideBarAdmin from '../../Compoents/SideBar/SideBarAdmin'
 export default function Admain() {
     let navigate = useNavigate()
     window.onload = function () {
-        navigate('/admain')
+        navigate('/admin')
     }
 
+
+    // overflow hidden ruin the postion sticky
     return (
-        <div className='d-flex' style={{overflow:"hidden"}}>
+        <div className='d-flex' style={{overflow:""}}>
             <SideBarAdmin />
             <MiniSideBar />
-            <div className="landing">
+            <div className="landing" style={{overflow:"hidden"}}>
                 <NavBar />
-                <div className="col pb-3 px-4">
+                <div className="col py-3 px-4">
                     <Header />
                     <Routes>
                         <Route path="/" element={<Activites />}> </Route>

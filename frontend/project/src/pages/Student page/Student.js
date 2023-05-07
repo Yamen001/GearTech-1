@@ -11,7 +11,7 @@ import SettingsStu from "./settingsstu"
 import Library from "./Library"
 // Componets
 import Header from "../../Compoents/Header/Header"
-import MiniSideBar from "../../Compoents/SideBar/MiniSideBar"
+import MiniSideBar from "../../Compoents/SideBar/MiniSideBarStudents"
 import NavBar from "../../Compoents/Navs/DashboardNav"
 import SlideBar from "../../Compoents/SideBar/SideBarStudent"
 import './student.css'
@@ -44,7 +44,7 @@ function Studentpage() {
 
             <div className="landing">
                 <NavBar />
-                <div className="col pb-3 px-4">
+                <div className="col py-3 px-4">
                     <Header />
                     <AnimatePresence mode="wait">
                         <Routes key={location.pathname} location={location}>

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import MiniSideBar from '../../Compoents/SideBar/MiniSideBar'
+import MiniSideBar from '../../Compoents/SideBar/MiniSideBarStudents'
 
 function LessonDetails() {
     return (

@@ -15,8 +15,8 @@ function SlideBar() {
     function togglesidebar() {
 
         settogglesidebar(prevvalue => !prevvalue)
-        let sidebaritemtext = document.querySelectorAll(".SideBar-Students .sidebar-itme-text")
-        let arrow = document.querySelector(".SideBar-Students .sidebar-arrow")
+        let sidebaritemtext = document.querySelectorAll(".SideBar .sidebar-itme-text")
+        let arrow = document.querySelector(".SideBar .sidebar-arrow")
         let sidebarLogoutSectionImg = document.querySelector(".sidebar-logout-section div")
 
         if (sidebarstate) {
@@ -41,7 +41,7 @@ function SlideBar() {
     }
 
     function sideBarliToggle(e) {
-        let links = document.querySelectorAll(".SideBar-Students ul li")
+        let links = document.querySelectorAll(".SideBar ul li")
         if (e.target.tagName === "A") {
             links.forEach(link => {
                 link.classList.remove("active")
@@ -56,7 +56,7 @@ function SlideBar() {
         }
     }
     return (
-        <div className="SideBar-Students flex-column justify-content-between" ref={sidebar} style={{ backgroundColor: Theme.sideBar }}>
+        <div className="SideBar flex-column justify-content-between" ref={sidebar} style={{ backgroundColor: Theme.sideBar }}>
             <ul className="Links px-2 list-unstyled position-sticky">
                 <div className="sidebar-logo text-center pt-2">
                     <img src={logo} alt="logoimg" width={43} />
@@ -64,7 +64,7 @@ function SlideBar() {
                 <div className=" d-flex justify-content-end mt-2">
                     <button onClick={togglesidebar} className="sidebar-arrow px-2 position-sticky border-0  bg-transparent text-center text-white">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" className="bi bi-arrow-left fw-bold" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+                            <path fillRule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
                         </svg>
                     </button>
                 </div>

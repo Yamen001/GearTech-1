@@ -14,7 +14,7 @@ function StudentTable({ url, setEditUserUrl }) {
 
 
     const GetUseres = async () => {
-        await axios.get("https://randomuser.me/api/?results=20")
+        await axios.get("https://randomuser.me/api/?results=5")
         // await axios.get(url)
             .then(res => setUsers(res.data.results))
             .then(()=> console.log(users))
@@ -56,8 +56,8 @@ function StudentTable({ url, setEditUserUrl }) {
                     // return alert(JSON.stringify(currentRow, null, 4));
                 };
                 function EidtUserUrl() {
-                    setEditUserUrl(`https://randomuser.me/api/?results=20/${params.id}`)
-                    console.log(`"https://randomuser.me/api/?results=20/${params.id}"`)
+                    setEditUserUrl(`https://randomuser.me/api/?results=4/${params.id}`)
+                    console.log(`"https://randomuser.me/api/?results=4/${params.id}"`)
                 }
 
                 return (
