@@ -7,21 +7,26 @@ import EditUserForm from '../forms/EditUserForm'
 function StudentTable({ url, setEditUserUrl }) {
 
 
-    let  [users, setUsers] = useState([])
+    let [users, setUsers] = useState([])
+    let [isloading, setisLoading] = useState(true.w-50)
 
+    useEffect(() => {
+        GetUseres()
+    }, [])
 
 
 
 
     const GetUseres = async () => {
         await axios.get("https://randomuser.me/api/?results=5")
-        // await axios.get(url)
-            .then(res => setUsers(res.data.results))
-            .then(()=> console.log(users))
+            // await axios.get(url)
+            .then(res => {
+                setUsers(res.data.results)
+                setisLoading(false)
+            })
+            .then(() => console.log(users))
     }
-    useEffect(() => {
-        GetUseres()
-    }, [])
+
 
     if (users) {
         var rows = users.map((data, index) => ({
@@ -46,7 +51,7 @@ function StudentTable({ url, setEditUserUrl }) {
             field: "control",
             // ^ params are the data of the row
             renderCell: (params) => {
-                const onClick = (e) => {
+                const onClick = () => {
                     let confirms = window.confirm("are you sure to Delete")
                     if (confirms) {
                         console.log("deleted account")
@@ -71,33 +76,49 @@ function StudentTable({ url, setEditUserUrl }) {
             width: 150,
         },
         {
-            field:"Profile",
-            renderCell:()=>{
+            field: "Profile",
+            renderCell: () => {
 
-                return(
+                return (
                     <>
                         <h4>user img</h4>
                     </>
                 )
             },
-            width:100 ,
+            width: 100,
         }
         // { field: "control", headerName: "Control", },
         // { field: "picture", headerName: "Profile", width:200 , height:100 },
     ]
     return (
         <div className='bg-white py-3 ' style={{ height: 500, }}>
-            <DataGrid
-                rows={rows}
-                columns={columns}
-                rowHeight={100}
-                pageSizeOptions={[5]}
-                checkboxSelection
-                disableRowSelectionOnClick
-            />
+            {isloading ? (
+                <div className='loading-cirlce' >
+                    <span className='circle circle1'>
+                        <span className='circle circle2'>
+                            <span className='circle circle3'></span>
+                        </span>
+                    </span>
+                </div>
+            ) :
+                (<DataGrid
+                    rows={rows}
+                    columns={columns}
+                    rowHeight={100}
+                    pageSizeOptions={[5]}
+                    checkboxSelection
+                    disableRowSelectionOnClick
+                />)
+            }
             {/* <EditUserForm /> */}
         </div>
+
     )
 }
 
 export default StudentTable
+
+
+
+// fix the nav bar of the admin 
+// clean the edituserform functions

@@ -20,10 +20,10 @@ export default function AllUsers() {
     let [data, setData] = useState({ type: "students", filed: "webdev", level: "level1", class: 'class1' })
 
     //^ dynamic url prepare
-    let [url , setUrl] = useState("")
+    let [url, setUrl] = useState("")
 
     //^ dynamic url with specific user
-    let [editUserUrl , setEditUserUrl] = useState("")
+    let [editUserUrl, setEditUserUrl] = useState("")
 
 
     //^ set defualt values when toggles the UI selects
@@ -31,7 +31,7 @@ export default function AllUsers() {
         setType(type)
         switch (type) {
             case 'students':
-            case 'parents' :
+            case 'parents':
                 setData({})
                 setData({ type: type, filed: "webdev", level: "level1", class: 'class1' })
                 return
@@ -50,18 +50,19 @@ export default function AllUsers() {
         }
     }
 
-    function HandleDataState(_title , value) {
-        setData({...data , [_title]:value.split(' ').join('').toLowerCase()})
+    function HandleDataState(_title, value) {
+        setData({ ...data, [_title]: value.split(' ').join('').toLowerCase() })
     }
+
 
 
     //^ Change UI selects funtions
     function selects(type) {
         switch (type) {
-            case 'students': 
+            case 'students':
             case 'parents':
                 return <>
-                    <select title="filed" onChange={(e) => HandleDataState(e.target.getAttribute('title'), e.target.value) }
+                    <select title="filed" onChange={(e) => HandleDataState(e.target.getAttribute('title'), e.target.value)}
                     >
                         <option>Web Dev</option>
                         <option>Mobile Dev</option>
@@ -91,12 +92,12 @@ export default function AllUsers() {
                     </select>
                 </>
             case 'admins':
-                return 
-            default: return 
+                return
+            default: return
         }
     }
-    function getTableData(){
-        let url = `allusers/api/${data.type}/${data?.filed || ''}/${data.level || ''}/${data.class ||''}`
+    function getTableData() {
+        let url = `allusers/api/${data.type}/${data?.filed || ''}/${data.level || ''}/${data.class || ''}`
         console.log(url)
         setUrl("")
         setUrl(url)
@@ -106,29 +107,30 @@ export default function AllUsers() {
         // console.log(url.slice(0,-2))
         // }  
     }
+    
 
     return (
-        <div className='all-users bg-white'>
-            <section className='students-table-section'>
-                <div className='d-flex gap-2'>
-                    <div>
-                        <select onChange={(e) => {
-                            HandleDefaultDataState(e.target.value)
-                        }}>
-                            <option>students</option>
-                            <option>teachers</option>
-                            <option>parents</option>
-                            <option>admins</option>
-                        </select>
+            <div className='all-users bg-white'>
+                <section className='students-table-section'>
+                    <div className='d-flex gap-2'>
+                        <div>
+                            <select onChange={(e) => {
+                                HandleDefaultDataState(e.target.value)
+                            }}>
+                                <option>students</option>
+                                <option>teachers</option>
+                                <option>parents</option>
+                                <option>admins</option>
+                            </select>
+                        </div>
+                        <div>
+                            {type && selects(type)}
+                            <button onClick={getTableData}>show</button>
+                        </div>
                     </div>
-                    <div>
-                        {type && selects(type)}
-                        <button onClick={getTableData}>show</button>
-                    </div>
-                </div>
-                {url && <StudentTable url={url} setEditUserUrl={setEditUserUrl} />}
-                {editUserUrl &&<EditUserForm editUserUrl={editUserUrl} setEditUserUrl={setEditUserUrl}  />}
-            </section >
-        </div >
-    )
-}
+                    {url && <StudentTable url={url} setEditUserUrl={setEditUserUrl} />}
+                    {editUserUrl && <EditUserForm editUserUrl={editUserUrl} setEditUserUrl={setEditUserUrl} />}
+                </section >
+            </div >
+        )
+    }
